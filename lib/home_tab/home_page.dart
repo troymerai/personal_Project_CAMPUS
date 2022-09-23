@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'feed';
+import 'feed.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage();
@@ -37,8 +37,7 @@ class HomePageState extends State<HomePage> {
           ),
         ],
       ),
-
-            bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex, //현재 보여주는 탭
         onTap: (newIndex) {
           print("selected newIndex : $newIndex");
@@ -47,7 +46,7 @@ class HomePageState extends State<HomePage> {
             currentIndex = newIndex; // 색깔 띄우는 거
           });
         },
-        selectedItemColor: Colors.green, // 선택된 아이콘 색상
+        selectedItemColor: Colors.black, // 선택된 아이콘 색상
         unselectedItemColor: Colors.grey, // 선택되지 않은 아이콘 색상
         showSelectedLabels: false, // 선택된 항목 label 숨기기
         showUnselectedLabels: false, // 선택되지 않은 항목 label 숨기기
@@ -55,10 +54,11 @@ class HomePageState extends State<HomePage> {
         backgroundColor: Colors.white.withOpacity(0.8),
         items: [
           BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: ""),
+          BottomNavigationBarItem(icon: Icon(CupertinoIcons.search), label: ""),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.search), label: ""),
-          BottomNavigationBarItem(icon: Icon(CupertinoIcons.collections), label: ""),
-          BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_crop_circle), label: ""),
+              icon: Icon(CupertinoIcons.collections), label: ""),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.person_crop_circle), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: ""),
         ],
       ),
